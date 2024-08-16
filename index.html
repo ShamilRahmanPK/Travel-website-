@@ -3,15 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Julius+Sans+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="mainImg container-fluid">
-      <button id="explore">Explore Our Packages</button>
+      <button id="explore" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Explore Now
+      </button>
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Plesase share your details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name">
+        </div>
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3 container-fluid">
+          <label for="exampleFormControlInput1" class="form-label">Phone</label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Number">
+        </div>
+        <div class="mb-3 container-fluid">
+          <label for="exampleFormControlTextarea1" class="form-label">Further Details</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Let's Go</button>
+      </div>
+    </div>
+  </div>
+</div>
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <!-- Container wrapper -->
         <div class="container-fluid">
@@ -32,46 +73,57 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mb-lg-0 d-flex  w-100">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="#"><img class="logo" src="./images/pngegg-removebg-preview.png" alt=""></a>
+                    <a class="nav-link text-dark" aria-current="page" href="#"><h2 class="logo" id="logo">Travel</h2></a>
                   </li>
                 </ul>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around w-100">
               <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" aria-current="page" href="#">HOME</a>
+                <a class="nav-link text-light fw-bolder" aria-current="page" href="#">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" href="#">PAGES</a>
+                <a class="nav-link text-light fw-bolder" href="#">Transport</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" href="#">DESTINATION</a>
+                <a class="nav-link text-light fw-bolder" href="#">Hotels</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" href="#">BLOG</a>
+                <div class="collapse navbar-collapse" id="navbarNavLightDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <button class="btn text-bg-primary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Packages
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-light">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" href="#">SHOP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark fw-bolder" href="#">LANDING</a>
+                <a class="nav-link text-light fw-bolder" href="#">Support</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>  
       <div id="imgText">
-        <h3>Travel Far <br> Enough</h3>
+        <h3 class="fisrtkey animate__pulse">Work, <br>Travel, <br>Save,</h3><h3 class="lastkey">Repeat.</h3>
       </div>
     </div>  
     <div class="container-fluid text-center mt-4">
-      <h3 class="mb-5">Honeymoon Packages</h3>
+      <h3 class="mb-5">HONEYMOON PACKAGES</h3>
       <div class="row">
           <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div class="card">
                   <img src="https://www.keralatourism.org/images/picture/categoryimages/thumb/backwater20131028124201.jpg" class="card-img-top" alt="Honeymoon Destination">
                   <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title fw-bold">Moscow</h5>
                       <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolorem ipsa accusamus recusandae laudantium, qui soluta, quos amet, doloribus explicabo minima corrupti laboriosam similique eaque. Animi, architecto tempora! Ratione, consequatur.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-dark">Go somewhere</a>
                   </div>
               </div>
           </div>
@@ -79,9 +131,9 @@
               <div class="card">
                   <img src="https://www.keralatourism.org/images/picture/categoryimages/thumb/backwater20131028124201.jpg" class="card-img-top" alt="Honeymoon Destination">
                   <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title fw-bold">Paris</h5>
                       <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolorem ipsa accusamus recusandae laudantium, qui soluta, quos amet, doloribus explicabo minima corrupti laboriosam similique eaque. Animi, architecto tempora! Ratione, consequatur.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-dark">Go somewhere</a>
                   </div>
               </div>
           </div>
@@ -89,9 +141,9 @@
               <div class="card">
                   <img src="https://www.keralatourism.org/images/picture/categoryimages/thumb/backwater20131028124201.jpg" class="card-img-top" alt="Honeymoon Destination">
                   <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title fw-bold">Switzerland</h5>
                       <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolorem ipsa accusamus recusandae laudantium, qui soluta, quos amet, doloribus explicabo minima corrupti laboriosam similique eaque. Animi, architecto tempora! Ratione, consequatur.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-dark">Go somewhere</a>
                   </div>
               </div>
           </div>
@@ -99,18 +151,18 @@
               <div class="card">
                   <img src="https://www.keralatourism.org/images/picture/categoryimages/thumb/backwater20131028124201.jpg" class="card-img-top" alt="Honeymoon Destination">
                   <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title fw-bold">Australia</h5>
                       <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolorem ipsa accusamus recusandae laudantium, qui soluta, quos amet, doloribus explicabo minima corrupti laboriosam similique eaque. Animi, architecto tempora! Ratione, consequatur.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-dark">Go somewhere</a>
                   </div>
               </div>
           </div>
       </div>
-      <button id="morePack" class="btn btn-secondary">More Packages</button>
+      <button id="morePack" class="btn btn-primary mb-5 mt-4">More Packages</button>
   </div>
     <!-- curosal -->
     <div class="text-center mt-4">
-        <h2>SPECIAL KERALA FESTIVAL TOUR</h2>
+        <h3 class="mb-4">SPECIAL PACKAGES</h3>
         <div id="carouselExampleCaptions" class="carousel slide mt-3 container-fluid" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -119,23 +171,23 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="2000">
-                <img height="500px" src="https://thumbs.dreamstime.com/b/chinese-fisher-nets-india-kerala-chinese-fisher-nets-india-kerala-background-backwaters-lale-lake-golden-hour-morning-asia-141312488.jpg" class="d-block w-100" alt="...">
+                <img height="500px" src="https://keystoneacademic-res.cloudinary.com/image/upload/element/11/116935_shutterstock_1048682888.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>RISHIKESH</h5>
+                  <h5>Moscow</h5>
                   <p>Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img height="500px" src="https://st3.depositphotos.com/1179009/32025/i/450/depositphotos_320251810-stock-photo-2019-masskara-festival.jpg" class="d-block w-100" alt="...">
+                <img height="500px" src="https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>LADAKH</h5>
+                  <h5>Paris</h5>
                   <p>Some representative placeholder content for the second slide.</p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img height="500px" src="https://ihplb.b-cdn.net/wp-content/uploads/2014/09/Onam-festival-in-Kerala.jpg" class="d-block w-100" alt="...">
+                <img height="500px" src="https://cdn.britannica.com/34/102134-050-6DE65DE1/La-Gruyere-district-Fribourg-canton-Switzerland.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>KUDREMUKH</h5>
+                  <h5>Switzerland</h5>
                   <p>Some representative placeholder content for the third slide.</p>
                 </div>
               </div>
@@ -150,7 +202,7 @@
             </button>
           </div>
     </div>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 bg-secondary-subtle p-4">
     <div class="row">
         <div class="col-12 col-md-6">
             <iframe class="mt-5 w-100" height="360" src="https://www.youtube.com/embed/R83BlU5nnbs" title="Signature Video  | Kerala Tourism | Experience God’s Own Country" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -178,7 +230,7 @@
 </div>
 <!-- card 1 -->
 <div class="container-fluid text-center mt-5">
-  <h2>NORTH INDIAN TOURS</h2>
+  <h3>NORTH INDIAN TOURS</h3>
   <div class="container mt-5">
       <div class="row">
           <div class="col-12 col-sm-6 col-md-4 mb-4">
@@ -195,8 +247,8 @@
   <hr class="mt-5">
 </div>
 <!-- cards 2 -->
-    <div class="text-center">
-        <h2>OUR PREMIUM SERVICES</h2>
+    <div class="text-center bg-secondary-subtle pb-4 pt-4">
+        <h3>OUR PREMIUM SERVICES</h3>
         <P>We will be handle you for safe journey</P>
         <ul class="cards2">
             <li class="items">
@@ -222,30 +274,30 @@
         </ul>
     </div>
 <!-- customer rating -->
-    <div class="text-center container mt-5">
-        <i class="fa-regular fa-envelope mail"></i>
-        <h3>Our Customer love</h3>
-        <ul class="cards3 mt-4">
-            <li class="items2">
-                <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
-                <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
-                <h4>Free Bike Ride</h4>
-                <p>learn more</p>
-            </li>
-            <li class="items2">
-                <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
-                <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
-                <h4>Free Bike Ride</h4>
-                <p>learn more</p>
-            </li>
-            <li class="items2">
-                <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
-                <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
-                <h4>Free Bike Ride</h4>
-                <p>learn more</p>
-            </li>
-        </ul>
-    </div>
+<div class="text-center container mt-5 mb">
+  <i class="fa-regular fa-envelope mail"></i>
+  <h3>Our Customers Love</h3>
+  <ul class="cards3 mt-4">
+      <li class="items2">
+          <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
+          <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
+          <h4>David</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo perspiciatis ut odit corporis reprehenderit quo alias praesentium tempora possimus voluptatibus</p>
+      </li>
+      <li class="items2">
+          <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
+          <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
+          <h4>Stella</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo perspiciatis ut odit corporis reprehenderit quo alias praesentium tempora possimus voluptatibus</p>
+      </li>
+      <li class="items2">
+          <img src="https://img.freepik.com/free-vector/flat-autumn-illustration_23-2149115986.jpg" alt="" class="card3Img">
+          <img class="rating" src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" alt="">
+          <h4>Steve</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo perspiciatis ut odit corporis reprehenderit quo alias praesentium tempora possimus voluptatibus</p>
+      </li>
+  </ul>
+</div>
     <!-- footer -->
     <div class="bg-info-subtle">
         <div class="row container p-5">
